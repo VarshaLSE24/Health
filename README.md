@@ -37,4 +37,4 @@ Asaria, Griffin & Cookson (2016), Medical Decision Making — the aggregate DCEA
 Love-Koh et al. (2020, 2023) — quality-adjusted life expectancy (QALE) by IMD quintile, and the socioeconomic distribution of health opportunity costs.
 Claxton et al. (2015) — the empirical NHS cost-effectiveness threshold (~£12,936/QALY), used here as an alternative to NICE's £20,000 convention.
 
-<img src="images/img_1.png" alt="Alt text" width="500">
+<img src="Images/img_1.png" alt="Alt text" width="500">
