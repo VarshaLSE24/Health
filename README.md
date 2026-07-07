@@ -1,9 +1,9 @@
 # Beyond the ICER: A Distributional Cost-Effectiveness Analysis of Semaglutide in England
-Does a cost-effective obesity drug reduce or widen health inequality? A full distributional cost-effectiveness analysis (DCEA) built in Excel following the Asaria / Cookson framework.
+Does a cost-effective obesity drug reduce or widen health inequality? A full distributional cost-effectiveness analysis (DCEA) built in Excel following Dr Asaria's experimental framework.
 
 Methods: DCEA · Atkinson equally-distributed equivalent (EDE) · one-way sensitivity analysis
 Tools: Microsoft Excel
-Socioeconomic variable: Index of Multiple Deprivation (IMD) quintiles
+Socioeconomic variable: Index of Multiple Deprivation (IMD) quintiles (England 20222 - 2024)
 
 
 
