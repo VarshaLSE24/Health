@@ -11,7 +11,28 @@ Socioeconomic variable: Index of Multiple Deprivation (IMD) quintiles (England 2
 **So why Semaglutide?**
 I chose Semaglutide (2.4 mg) to apply my newfound knowledge from Dr Miqdad Asaria's short interactive exercise in DCEA using fictional data "Slimstatin for Obesity. I used his framework to create a complex, empirical evaluation using real-world data derived across multiple distinct clinical and socioeconomic sources. For verification purposes and to eliminate confirmation bias during model design, this analysis was developed independently prior to reviewing existing literature on the subject, establishing a blinded baseline to later compare against external evaluations (such as the ISPOR Semaglutide DCEA case study).
 
-Before I explain the framework and results, I would like to quickly lay out the parameter definitions and abbreviations used throughout the project in the Glossary mentioned below.
+Before I explain the framework and results, I would like to quickly lay out the parameter definitions and abbreviations used throughout the project below.
+
+<details>
+<summary><strong>ICER</strong> — Incremental Cost-Effectiveness Ratio</summary>
+The additional cost per additional QALY gained, comparing the new intervention to standard care.
+</details>
+<details>
+<summary><strong>QALY</strong> — Incremental Cost-Effectiveness Ratio</summary>
+A metric where 1 unit equals one year of perfect health for a patient.
+</details>
+<details>
+<summary><strong>CEA</strong> — Incremental Cost-Effectiveness Ratio</summary>
+The standard way to check if a new drug gives enough health benefit to justify its price tag.
+</details>
+<details>
+<summary><strong>QALE</strong> — Incremental Cost-Effectiveness Ratio</summary>
+The total number of healthy, quality years a person can expect to live from birth.
+</details>
+<details>
+<summary><strong>NHB</strong> — Incremental Cost-Effectiveness Ratio</summary>
+The final health gain left over after you subtract the health lost from the budget to pay for it.
+</details>
 
 I broke down the data extraction and modelling into 4 modules.
  
