@@ -3,10 +3,11 @@ Does a cost-effective obesity drug reduce or widen health inequality? A full dis
 
 Methods: DCEA · Atkinson equally-distributed equivalent (EDE) · one-way sensitivity analysis
 Tools: Microsoft Excel
-Socioeconomic variable: Index of Multiple Deprivation (IMD) quintiles (England 20222 - 2024)
+Equity variable: Index of Multiple Deprivation (IMD) quintiles, England (2022–2024 data)
 
 
-**Background:** This project tries to apply distributional cost-effectiveness analysis (DCEA) to semaglutide (2.4 mg) for obesity in England, extending standard cost-effectiveness analysis (CEA) to ask whether, incorporating health inequality in the model, changes the way we assess an intervention and identify how its health effects are distributed across socioeconomic groups.
+**Why this project?** 
+Standard cost-effectiveness analysis asks whether a drug is worth funding. It says nothing about who gets the health and who pays for it. I built a distributional cost-effectiveness analysis (DCEA) to answer that second question for semaglutide 2.4 mg (Wegovy) in England. To ask whether incorporating health inequality in the model changes the way we assess an intervention and identify how its health effects are distributed across socioeconomic groups.
 
 **So why Semaglutide?**
 I chose Semaglutide (2.4 mg) to apply my newfound knowledge from Dr Miqdad Asaria's short interactive exercise in DCEA using fictional data "Slimstatin for Obesity. I used his framework to create a complex, empirical evaluation using real-world data derived across multiple distinct clinical and socioeconomic sources. For verification purposes and to eliminate confirmation bias during model design, this analysis was developed independently prior to reviewing existing literature on the subject, establishing a blinded baseline to later compare against external evaluations (such as the ISPOR Semaglutide DCEA case study).
@@ -18,23 +19,73 @@ Before I explain the framework and results, I would like to quickly lay out the 
 The additional cost per additional QALY gained, comparing the new intervention to standard care.
 </details>
 <details>
-<summary><strong>QALY</strong> — Incremental Cost-Effectiveness Ratio</summary>
+<summary><strong>QALY</strong> — Quality-Adjusted Life Year</summary>
 A metric where 1 unit equals one year of perfect health for a patient.
 </details>
 <details>
-<summary><strong>CEA</strong> — Incremental Cost-Effectiveness Ratio</summary>
+<summary><strong>CEA</strong> — Cost-Effectiveness Analysis</summary>
 The standard way to check if a new drug gives enough health benefit to justify its price tag.
 </details>
 <details>
-<summary><strong>QALE</strong> — Incremental Cost-Effectiveness Ratio</summary>
+<summary><strong>QALE</strong> — Quality-Adjusted Life Expectancy</summary>
 The total number of healthy, quality years a person can expect to live from birth.
 </details>
 <details>
-<summary><strong>NHB</strong> — Incremental Cost-Effectiveness Ratio</summary>
+<summary><strong>NHB</strong> — Net Health Benefit</summary>
 The final health gain left over after you subtract the health lost from the budget to pay for it.
 </details>
+<details>
+<summary><strong>IMD</strong> — Index of Multiple Deprivation</summary>
+England's official small-area deprivation ranking; Q1 = most deprived.
+</details>
+<details>
+<summary><strong>EDE</strong> — Equally-Distributed Equivalent</summary>
+Total health discounted for how unequally it is spread.
+</details>
+<details>
+<summary><strong>ε</strong> — Inequality aversion parameter</summary>
+How much total health society will sacrifice for a fairer distribution.
+</details>
+<details>
+<summary><strong>WTP</strong> — Willingness-to-Pay threshold</summary>
+The £/QALY benchmark used to judge value (NICE convention: £20,000).
+</details>
+<details>
+<summary><strong>ERG</strong> — Evidence Review Group</summary>
+The independent academic group that critiques a company's NICE submission.
+</details>
+<details>
+<summary><strong>TA875</strong> — NICE Technology Appraisal 875/summary>
+The NICE appraisal of semaglutide 2.4 mg for weight management.
+</details>
 
-I broke down the data extraction and modelling into 4 modules.
+I broke down the data extraction and modelling into 5 modules.
+**Need falls with affluence | access rises with it**
+<img width="1154" height="564" alt="image" src="https://github.com/user-attachments/assets/ee1748ff-fa6b-47af-9d30-291c197aeb17" />
+Figure 1. The core tension in one picture: obesity prevalence is highest in the most deprived quintiles, but treatment uptake runs the other way.
+
+## How the model works
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {
+  "fontFamily": "Cambria, Georgia, 'Times New Roman', serif",
+  "primaryColor": "#F6E3E3",
+  "primaryBorderColor": "#8B1A1A",
+  "primaryTextColor": "#4A0E0E",
+  "lineColor": "#8B1A1A",
+  "fontSize": "15px"
+}}}%%
+flowchart LR
+    M1["Module 1<br/>CEA constants<br/>(cost & QALY per patient)"] --> M2["Module 2<br/>Benefit incidence<br/>(who gains)"]
+    M1 --> M3["Module 3<br/>Opportunity cost<br/>(who pays)"]
+    M2 --> NHB["Net Health Benefit<br/>by quintile"]
+    M3 --> NHB
+    NHB --> M4["Module 4<br/>Atkinson social<br/>welfare analysis"]
+    M4 --> M5["Module 5<br/>Sensitivity<br/>analysis"]
+
+    style NHB fill:#1F4E79,stroke:#12314D,color:#FFFFFF
+    style M5 fill:#EAC5C5,stroke:#8B1A1A
+```
  
 **Module 1: Cost-Effectiveness Analysis (CEA) Constants & Parameter Derivation**
 For the baseline economic evaluation, a lifetime net health opportunity cost framework was constructed utilizing primary clinical and independent economic data from the National Institute for Health and Care Excellence (NICE) Technology Appraisal 875 (TA875). Due to commercial confidentiality restrictions surrounding the UK-specific net health utility data for Semaglutide 2.4 mg, an incremental Quality-Adjusted Life Year (QALY) proxy of $0.098$ per patient was transparently adapted from a methodologically aligned Core Obesity Model (COM) over an identical 40-year discounted horizon. This was paired with the independent Evidence Review Group (ERG) base-case Incremental Cost-Effectiveness Ratio (ICER) of £16,337 per QALY to algebraically isolate a lifetime net incremental cost of £1,601 per patient. Decision-making trade-offs were then benchmarked using the standard NICE willingness-to-pay acceptability threshold of £20,000 per QALY against an empirical NHS marginal opportunity cost threshold of £12,936 per QALY. This structural comparison establishes the central analytical tension of the Distributional Cost-Effectiveness Analysis (DCEA): while the intervention yields a positive Net Health Benefit ($+0.018$) under conventional reimbursement guidelines, it simultaneously generates a net health loss ($-0.026$) at the system level by displacing more health from the broader NHS budget than it creates.
