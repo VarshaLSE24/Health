@@ -59,7 +59,7 @@ The independent academic group that critiques a company's NICE submission.
 The NICE appraisal of semaglutide 2.4 mg for weight management.
 </details>
 
-I broke down the data extraction and modelling into 5 modules.
+
 **Need falls with affluence | access rises with it**
 <img width="1154" height="564" alt="image" src="https://github.com/user-attachments/assets/ee1748ff-fa6b-47af-9d30-291c197aeb17" />
 Figure 1. The core tension in one picture: obesity prevalence is highest in the most deprived quintiles, but treatment uptake runs the other way.
@@ -86,26 +86,83 @@ flowchart LR
     style NHB fill:#1F4E79,stroke:#12314D,color:#FFFFFF
     style M5 fill:#EAC5C5,stroke:#8B1A1A
 ```
- 
+
+I broke down the data extraction and modelling into 5 modules.
+
 **Module 1: Cost-Effectiveness Analysis (CEA) Constants & Parameter Derivation**
-For the baseline economic evaluation, a lifetime net health opportunity cost framework was constructed utilizing primary clinical and independent economic data from the National Institute for Health and Care Excellence (NICE) Technology Appraisal 875 (TA875). Due to commercial confidentiality restrictions surrounding the UK-specific net health utility data for Semaglutide 2.4 mg, an incremental Quality-Adjusted Life Year (QALY) proxy of $0.098$ per patient was transparently adapted from a methodologically aligned Core Obesity Model (COM) over an identical 40-year discounted horizon. This was paired with the independent Evidence Review Group (ERG) base-case Incremental Cost-Effectiveness Ratio (ICER) of £16,337 per QALY to algebraically isolate a lifetime net incremental cost of £1,601 per patient. Decision-making trade-offs were then benchmarked using the standard NICE willingness-to-pay acceptability threshold of £20,000 per QALY against an empirical NHS marginal opportunity cost threshold of £12,936 per QALY. This structural comparison establishes the central analytical tension of the Distributional Cost-Effectiveness Analysis (DCEA): while the intervention yields a positive Net Health Benefit ($+0.018$) under conventional reimbursement guidelines, it simultaneously generates a net health loss ($-0.026$) at the system level by displacing more health from the broader NHS budget than it creates.
 
-<details>
-<summary><strong>ICER</strong> — Incremental Cost-Effectiveness Ratio</summary>
+I anchored the baseline evaluation in NICE Technology Appraisal 875 (TA875). Because the UK-specific utility data for semaglutide 2.4 mg is commercially confidential, I adapted an incremental QALY proxy of 0.098 per patient from a methodologically aligned Core Obesity Model, over the same 40-year discounted horizon.
 
-The additional cost per additional QALY gained, comparing the new intervention to standard care.
-</details>
+Pairing that QALY gain with the independent ERG base-case ICER of £16,337/QALY lets me algebraically isolate a lifetime net incremental cost of £1,601 per patient.
 
-**Module 2 (Part 1): Benefit Incidence & Population Allocation Derivation**
-To map the social distribution of health gains, a disaggregated benefit incidence framework was constructed by combining national demographic profiles with localized clinical and commissioning data. Population denominators per income quintile were derived by isolating adults aged 16 and over from the 2020 ONS mid-year deprivation decile estimates and applying their relative proportions to a headline adult population total of 47,220,600. Baseline clinical need was established using age-standardized obesity prevalence rates (BMI $\ge$ 30) from the Health Survey for England 2024, which were scaled uniformly by a factor of 25%—following Finer et al. (2025)—to isolate the specialist-eligible population (BMI $\ge$ 35). To reflect real-world healthcare access barriers, an empirical uptake gradient ($0.04\%$ in Q1 graduating to $1.10\%$ in Q5) was mapped using regional Tier 3 commissioning variations extracted from recent Freedom of Information data. Multiplying these live parameters isolates a national cohort of 15,240 treated patients, concentrated heavily in less deprived quintiles. Applying the constant clinical efficacy multiplier of $0.098$ QALYs—derived from methodologically aligned Core Obesity Model data—yields the total gross health benefits gained per quintile. This structural layer establishes the gross clinical dividend of the intervention, setting an empirical baseline to be evaluated against the distributed system-level opportunity costs.
+I then benchmarked this against two thresholds: the conventional NICE willingness-to-pay threshold (£20,000/QALY) and Claxton's empirical estimate of the NHS's marginal opportunity cost (£12,936/QALY). This sets up the central tension of the whole project: the same patient generates a positive per-person NHB (+0.018 QALYs) under NICE convention, but a net health loss (−0.026 QALYs) once you count what the NHS actually displaces to pay for it.
 
-**Module 2 (Part 2): Opportunity Cost & Population Distribution Derivation**
-To model how the financial burden of funding the intervention impacts health across the socioeconomic spectrum, a population denominator framework was constructed using the 2020 ONS mid-year deprivation decile area estimates, aggregating adults aged 16 and over into five unified Index of Multiple Deprivation (IMD) quintiles. Total gross QALYs gained per quintile were modeled by applying a constant clinical efficacy multiplier ($0.098$ QALYs) to the treated patient volume, which was uniquely derived by overlaying Health Survey for England obesity prevalence trends against regional Tier 3 commissioning uptake data. To quantify health displacement at the system level, health opportunity costs were modeled across four scenario combinations using both standard willingness-to-pay (£20,000) and empirical (£12,936) thresholds. In the reference base case, opportunity costs were distributed equally ($20\%$ per quintile) following conventional NICE reference case assumptions. This was stress-tested against an empirical, deprivation-weighted distribution ($27\%$ in Q1 graduating down to $13\%$ in Q5) adapted from the University of York Centre for Health Economics Prototype Equity Tool. By subtracting these localized displaced QALYs from the gross QALY gains, the framework isolates Net Health Benefit (NHB) per quintile, serving as the central metric of the DCEA; a persistent negative NHB in the most deprived quintiles mathematically demonstrates that the intervention inflicts net health harm on vulnerable populations by displacing vital baseline NHS services.
+**Table 1 : Core model parameters**
 
-**Module 3: Social Welfare Function & Equity Integration**
-To evaluate the policy trade-offs under varying degrees of societal inequality aversion, Module 3 implements an Atkinson Social Welfare Function structured on baseline Quality-Adjusted Life Expectancy (QALE) by income quintile. While adopting the three-part QALE spine from the foundational Asaria et al. template, this module corrects a vital mathematical discrepancy by cleanly reconciling per-capita life expectancy scales with population-wide total net benefits. Crucially, the net benefit calculation was re-engineered to explicitly subtract the distributed NHS health opportunity costs derived in Module 2, rather than omitting them. The final analysis surfaces an important methodological insight: because a single pharmaceutical intervention yields infinitesimally small shifts in a nation's lifetime per-capita health distribution, the global Atkinson decision remains stably with the intervention across all inequality aversion parameters ($\alpha$). Instead, the true equity narrative and regressive distribution pattern are explicitly captured and interpreted through the disaggregated net benefit rows, which cleanly highlight that the poorest quintiles structurally absorb net health harms while wealthier quintiles capture the gains.
+| Parameter | Value | Source |
+|---|---:|---|
+| Incremental QALY per patient | 0.098 | Core Obesity Model (40-yr discounted horizon) |
+| ERG base-case ICER | £16,337/QALY | NICE TA875 ERG report |
+| Net incremental cost per patient | £1,601 | Derived (0.098 × £16,337) |
+| NICE WTP threshold | £20,000/QALY | NICE reference case |
+| Empirical opportunity cost threshold | £12,936/QALY | Claxton et al. |
+| Per-patient NHB at £20,000 | +0.018 QALYs | Derived |
+| Per-patient NHB at £12,936 | −0.026 QALYs | Derived |
 
-**Module 4: Comprehensive Sensitivity Analysis Breakdown**
+---
+
+**Module 2 - Who gains?: Benefit Incidence**
+
+To map the social distribution of health gains, a disaggregated benefit incidence framework was constructed by combining national demographic profiles with localized clinical and commissioned data. Population denominators per income quintile were derived by isolating adults aged 16 and over from the 2020 ONS mid-year deprivation decile estimates and applying their relative proportions to a headline adult population total of 47,220,600. 
+
+Clinical need was quantified using age-standardised obesity prevalence (BMI ≥30) from the Health Survey for England 2024, scaled by 25% following Finer et al. (2025) to isolate the BMI ≥35 specialist-eligible population. Similarly, uptake was derived from regional Tier 3 treatment rates across all 42 English ICBs (Finer et al., Clinical Obesity, 2025), mapped to IMD quintiles and ranging from 0.04% (North East and Yorkshire) to 1.10% in the least deprived (South East).
+
+Multiplying population × eligibility × uptake isolates a treated national cohort of 15,240 patients — concentrated heavily in the least deprived quintiles. Applying the 0.098 QALY multiplier gives gross health gains per quintile.
+
+**Module 3 - Who pays: opportunity cost distribution**
+
+Funding the drug displaces other NHS care, and that displaced health also has a social distribution. I modelled it two ways: a uniform reference case (20% of displacement per quintile, the conventional NICE assumption & Dr Asaria's base case example) and an empirical deprivation-weighted case (27% in Q1 falling to 13% in Q5, adapted from the University of York CHE Prototype Equity Tool), reflecting that poorer groups use more NHS care and so lose more when budgets tighten.
+
+Subtracting each quintile's displaced QALYs from its gross gains yields Net Health Benefit per quintile, the central metric of the DCEA. The result is stark: the most deprived quintiles carry a persistent negative NHB. The intervention doesn't just fail to help them; it makes them net worse off by displacing services they rely on.
+
+**Table 2 — Net Health Benefit by quintile (£20,000 threshold, base case)**
+
+| IMD quintile | Treated patients | Gross QALYs | Displaced QALYs | Net Health Benefit |
+|---|---:|---:|---:|---:|
+| Q1 (most deprived) | 341 | 33.5 | 244.0 | **−210.6** |
+| Q2 | 1,598 | 156.6 | 244.0 | −87.4 |
+| Q3 | 2,402 | 235.4 | 244.0 | −8.6 |
+| Q4 | 4,522 | 443.2 | 244.0 | +199.2 |
+| Q5 (least deprived) | 6,377 | 624.9 | 244.0 | **+380.9** |
+| **Total** | **15,240** | **1,493.7** | **1,220.0** | **+273.6** |
+
+*Displaced QALYs follow the NICE reference-case assumption of uniform displacement (20% per quintile). Row values are rounded; totals are computed from unrounded figures.*
+
+<img width="1228" height="572" alt="image" src="https://github.com/user-attachments/assets/c86235c9-9100-4e30-b5ab-a415e34f9b16" />
+Figure 2. The gains flow to the least deprived; the losses land on the most deprived.
+
+**Module 4: DCEA & Atkinson social welfare analysis**
+
+To ask how much a decision-maker who cares about fairness should discount these results, I implemented an Atkinson social welfare function over baseline quality-adjusted life expectancy (QALE) by quintile. I kept the three-part QALE spine from the Asaria template but fixed a scale mismatch, cleanly reconciling per-capita life expectancy with population-level total net benefits, and changed the net benefit calculation to explicitly subtract the distributed opportunity costs from Module 3 rather than omitting them.
+
+The headline insight: a single drug moves a nation's lifetime per-capita health distribution by almost nothing; the per-person QALE shift is on the order of 10⁻⁵, so baseline and semaglutide EDE values differ only in the fifth decimal place. The verdict stays with semaglutide through mild-to-moderate inequality aversion (ε ≤ 3), but under a strong equity commitment (ε ≥ 5) the welfare penalty for compounding an unequal distribution outweighs the microscopic mean gain, and the baseline becomes preferred. The sharper equity story, though, lives in the disaggregated quintile rows, which show the poorest groups structurally absorbing net harm while the wealthiest capture the gains.
+
+**Table 3 — Atkinson EDE (QALE, years) by inequality aversion (ε)**
+
+| ε | Interpretation | Baseline EDE | Semaglutide EDE | Preferred strategy |
+|---:|---|---:|---:|---|
+| 0.0 | Pure efficiency (standard CEA) | 69.845745 | 69.845751 | Semaglutide |
+| 0.5 | Mild aversion | 69.784581 | 69.784586 | Semaglutide |
+| 1.0 | Moderate aversion | 69.722833 | 69.722837 | Semaglutide |
+| 2.0 | Substantial aversion | 69.597688 | 69.597691 | Semaglutide |
+| 3.0 | Strong aversion | 69.470536 | 69.470538 | Semaglutide |
+| 5.0 | Very strong aversion | 69.211244 | 69.211243 | **Baseline** |
+| 10.0 | Extreme aversion | 68.548174 | 68.548167 | **Baseline** |
+
+*Baseline QALE at birth spans 63 (Q1) to 75 (Q5), a 12-year healthy-life gap (Love-Koh et al.). EDE values are shown to six decimals because a single drug shifts per-person lifetime QALE by only ~10⁻⁵; the decision flips between ε = 3 and ε = 5, where the welfare penalty for the regressive distribution overtakes the tiny mean gain.*
+
+
+**Module 5: Sensitivity Analysis Breakdown | Can anything reverse the regressive pattern?**
 
 Each panel isolates a core assumption of the framework to test whether alternative policy settings or pricing shifts could reverse the regressive nature of the intervention.
 
