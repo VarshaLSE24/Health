@@ -207,11 +207,12 @@ The empirical prescribing gradient measured here is not a 15–20% deviation fro
 The published poster defends the flat-uptake NHS assumption by noting that affluent demographics may increasingly access obesity medications via private out-of-pocket markets, theoretically offsetting a pro-affluent NHS gradient. However, the $0.04\%$ to $1.10\%$ access gradient utilized in this model exists strictly within NHS commissioning itself, prior to the inclusion of any private-market volume. Because private medical access structurally skews toward affluence, incorporating private provision would mathematically steepen the regressive gradient, compounding rather than correcting the systemic inequality.
 
 ```mermaid
-xychart-beta
-    title "Access Variance vs. Equity Neutrality (Ratio of Q5 to Q1 Uptake)"
-    x-axis ["YHEC Tipping Point", "Observed NHS Gradient"]
-    y-axis "Relative Uptake Variance (Fold-Difference)" 0 --> 30
+xychart-beta horizontal
+    title "Access Variance vs. Equity Neutrality (Q5 : Q1 uptake ratio)"
+    x-axis ["YHEC neutrality tipping point", "Observed NHS gradient (Finer et al., 2025)"]
+    y-axis "Relative uptake variance (fold-difference, 1.0 = equal access)" 0 --> 30
     bar [1.2, 27.5]
+```
 
 **Limitations & Distinct Contributions**
 A rigorous methodological comparison must recognize the superior capabilities of the published study on several axes. Because the YHEC model utilizes the true, confidential commercial discount, the £1,601 net cost utilized in this independent model—derived from the list-price ICER—likely overstates the true magnitude of the budget displacement. Additionally, their uncertainty analysis relies on a full Probabilistic Sensitivity Analysis (PSA) plotted on the equity impact plane, whereas this model is deterministic—a genuine methodological gap.
