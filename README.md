@@ -213,6 +213,7 @@ xychart-beta horizontal
     y-axis "Relative uptake variance (fold-difference, 1.0 = equal access)" 0 --> 30
     bar [1.2, 27.5]
 ```
+Figure 3: Relative Access Disparity vs. the Equity Neutrality Threshold. This chart contrasts the theoretical limit of equity neutrality against the empirical reality of the NHS rollout, plotting the ratio of drug uptake in the wealthiest quintile (Q5) relative to the poorest (Q1). While the published model establishes a modest 1.2-fold variance (a 15% to 20% skew) as the critical tipping point where the drug's equity-improving benefits are entirely neutralized, real-world regional prescribing data reveals an actual 27.5-fold disparity—demonstrating that the current rollout operates an order of magnitude past the threshold of positive distributional impact.
 
 **Limitations & Distinct Contributions**
 A rigorous methodological comparison must recognize the superior capabilities of the published study on several axes. Because the YHEC model utilizes the true, confidential commercial discount, the £1,601 net cost utilized in this independent model—derived from the list-price ICER—likely overstates the true magnitude of the budget displacement. Additionally, their uncertainty analysis relies on a full Probabilistic Sensitivity Analysis (PSA) plotted on the equity impact plane, whereas this model is deterministic—a genuine methodological gap.
