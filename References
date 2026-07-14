@@ -1,0 +1,37 @@
+**Core clinical & cost-effectiveness inputs**
+1. Silva Miguel L, Soares M, Olivieri A, Sampaio F, Lamotte M, Shukla S, Conde V, Freitas P, Costa J, Borges M. Cost-effectiveness of semaglutide 2.4 mg in chronic weight management in Portugal. Diabetol Metab Syndr. 2024;16(1):97. doi:10.1186/s13098-024-01338-4 
+2. NICE. Semaglutide for managing overweight and obesity. Technology appraisal guidance TA875.
+3. Claxton K, Martin S, Soares M, Rice N, Spackman E, Hinde S, Devlin N, Smith PC, Sculpher M. Methods for the estimation of the NICE cost-effectiveness threshold. Health Technol Assess. 2015;19(14):1–503. doi:10.3310/hta19140
+4. Sandhu H, Xu W, Olivieri AV, Lübker C, Smith I, Antavalis V. Once-weekly subcutaneous semaglutide 2.4 mg injection is cost-effective for weight management in the United Kingdom. Adv Ther. 2023;40(3):1282–1291. doi:10.1007/s12325-022-02423-8
+
+**Uptake / access data**
+1. Finer N, et al. Commissioning of Tier 3 obesity services by Integrated Care Boards in England: an analysis of responses to Freedom of Information requests. Clin Obes. 2025. doi:10.1111/cob.70038
+2. de Bray A, Schnitzer H, Mahase E, Singh P, Andrews R, McGowan BM, Le Brocq S, Wilding JPH, Flint SW, Hazlehurst JM. Variation in the commissioning of semaglutide for the treatment of obesity and overweight across England. Clin Obes. 2026;16(1):e70044. doi:10.1111/cob.70044
+
+**Framework / method (what you actually built on)**
+1. Asaria M. DCEA short course [Slimstatin interactive exercise]. GitHub: miqdadasaria/DCEA_short_course.
+2. Asaria M, Griffin S, Cookson R. Distributional cost-effectiveness analysis: a tutorial. Med Decis Making. 2016;36(1):8–19. doi:10.1177/0272989X15583266
+3. Asaria M, Griffin S, Cookson R, Whyte S, Tappenden P. Distributional cost-effectiveness analysis of health care programmes — a methodological case study of the UK Bowel Cancer Screening Programme. Health Econ. 2015;24(6):742–754. doi:10.1002/hec.3058
+4. Atkinson AB. On the measurement of inequality. J Econ Theory. 1970;2(3):244–263
+5. Cookson R, Mirelman AJ, Griffin S, Asaria M, Dawkins B, Norheim OF, Verguet S, Culyer AJ. Using cost-effectiveness analysis to address health equity concerns. Value Health. 2017;20(2):206–212. doi:10.1016/j.jval.2016.11.027
+6. Cookson R, Griffin S, Norheim OF, Culyer AJ, eds. Distributional Cost-Effectiveness Analysis: Quantifying Health Equity Impacts and Trade-Offs. Oxford University Press; 2020.
+7. Robson M, Asaria M, Cookson R, Tsuchiya A, Ali S. Eliciting the level of health inequality aversion in England. Health Econ. 2017;26(10):1328–1334. doi:10.1002/hec.3430
+
+**Opportunity-cost distribution**
+Love-Koh J, Cookson R, Claxton K, Griffin S. Estimating social variation in the health effects of changes in health care expenditure. Med Decis Making. 2020;40(2):170–182. doi:10.1177/0272989X20904360
+
+**Distributional methods / QALE**
+Love-Koh J, Cookson R, Gutacker N, Patton T, Griffin S. Aggregate distributional cost-effectiveness analysis of health technologies. Value Health. 2019;22(5):518–526. doi:10.1016/j.jval.2019.03.006
+
+**Government / statistical datasets**
+1. Office for National Statistics. Population by Index of Multiple Deprivation (IMD), England, 2001 to 2019. Released 2020. 
+2. Office for National Statistics. Health state life expectancies by national deprivation deciles, England: 2022 to 2024. 
+3. NHS England / NHS Digital. Health Survey for England [year], obesity prevalence by IMD quintile (adults 16+, age-standardised).
+4. NICE. Guide to the methods of technology appraisal / NICE reference case. 
+
+**Comparator study (your critical-analysis centrepiece)**
+1. Malcolm R, Naylor R, Fewster H, Hyde B, Jensen S, Lübker C, Holmes H. Distributional cost-effectiveness analysis: a case study of obesity. York Health Economics Consortium & Novo Nordisk. ISPOR poster HPR58.
+
+**Additional references**
+1. Anaya-Montes M, et al. Do the poor gain more? The impact on health inequality of changes in public expenditure on secondary care. CHE Research Paper 197. University of York, Centre for Health Economics; 2025.
+2. Wilding JPH, et al. Once-weekly semaglutide in adults with overweight or obesity (STEP 1). N Engl J Med. 2021;384(11):989–1002.
